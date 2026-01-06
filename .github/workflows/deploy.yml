@@ -4,7 +4,7 @@ name: Deploy Next.js to GitHub Pages
 # Trigger: Run this only when code is pushed to the 'main' branch
 on:
   push:
-    branches: ["main"]
+    branches: ["master"]
 
 # Permissions needed to write to your repo's "Pages" environment
 permissions:
