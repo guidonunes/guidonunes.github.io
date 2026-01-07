@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SocialDock } from "@/components/social-dock";
 
 export function Hero() {
   return (
@@ -9,7 +10,7 @@ export function Hero() {
       <div className="flex-1 space-y-6 text-center md:text-left order-2 md:order-1 min-w-0">
         <div className="space-y-3">
           <h1 className="text-4xl md:text-7xl font-bold tracking-tighter text-slate-900 dark:text-white">
-            Guido Nunes
+            Guilherme Nunes
           </h1>
           <p className="text-xl md:text-3xl font-medium text-cyan-600 dark:text-cyan-400">
             Software Engineer
@@ -22,8 +23,8 @@ export function Hero() {
         </p>
 
         {/* Icons Placeholder */}
-        <div className="pt-4 flex justify-center md:justify-start">
-           {/* Icons will go here */}
+        <div className="pt-6 flex justify-center md:justify-start">
+          <SocialDock />
         </div>
       </div>
 
