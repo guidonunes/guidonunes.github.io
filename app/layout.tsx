@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; // 1. Import the professional font
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-// 2. Configure the font (subsets: 'latin' reduces file size)
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Guilherme Nunes | Software Engineer",
-  description: "Software Engineer specializing in scalable systems. Experienced in Java, Ruby, Python, Next.js, and clean architecture. Based in São Paulo.",
+  title: "Guido Nunes | Software Engineer",
+  description: "Software Engineer specializing in scalable systems. Experienced in Java, Python, Next.js, and clean architecture. Based in São Paulo.",
 };
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* 3. Apply the font class to the body */}
+      {/* 4. Apply the font class to the body so it flows everywhere */}
       <body className={inter.className}>{children}</body>
     </html>
   );
