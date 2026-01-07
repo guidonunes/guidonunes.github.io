@@ -26,7 +26,7 @@ export function ThemeToggle() {
   }, [mounted, resolvedTheme]);
 
   const toggleTheme = React.useCallback(() => {
-    const currentTheme = resolvedTheme || theme || "light";
+    const currentTheme = resolvedTheme || theme || "dark";
     const newTheme = currentTheme === "dark" ? "light" : "dark";
     setTheme(newTheme);
     // Force immediate update
