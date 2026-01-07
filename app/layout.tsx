@@ -7,7 +7,7 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Guido Nunes | Software Engineer",
+  title: "Guilherme Nunes | Software Engineer",
   description: "Software Engineer specializing in scalable systems. Experienced in Java, Next.js, and clean architecture. Based in São Paulo.",
 };
 
