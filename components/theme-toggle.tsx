@@ -13,9 +13,29 @@ export function ThemeToggle() {
     setMounted(true);
   }, []);
 
+  // Sync theme with DOM
+  React.useEffect(() => {
+    if (mounted && resolvedTheme) {
+      const root = document.documentElement;
+      if (resolvedTheme === "dark") {
+        root.classList.add("dark");
+      } else {
+        root.classList.remove("dark");
+      }
+    }
+  }, [mounted, resolvedTheme]);
+
   const toggleTheme = React.useCallback(() => {
     const currentTheme = resolvedTheme || theme || "light";
-    setTheme(currentTheme === "dark" ? "light" : "dark");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    // Force immediate update
+    const root = document.documentElement;
+    if (newTheme === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
   }, [theme, resolvedTheme, setTheme]);
 
   if (!mounted) {
