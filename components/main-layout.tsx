@@ -8,7 +8,7 @@ interface MainLayoutProps {
 
 export function MainLayout({ children}: MainLayoutProps) {
   return(
-    <div className="flex min-h-screen w-full flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+    <div className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center p-4 sm:p-6 md:p-8">
       <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-50">
         <ThemeToggle />
       </div>

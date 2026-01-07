@@ -23,11 +23,118 @@
   body {
     /* Updated: Using custom 'bg-off-white' for a cleaner light mode base */
     @apply antialiased bg-off-white text-slate-900 dark:bg-charcoal dark:text-off-white transition-colors duration-300;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Background Ambience - Multi-layer subtle animated gradient mesh */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+      radial-gradient(ellipse 80% 50% at 15% 30%, rgba(139, 92, 246, 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 85% 70%, rgba(236, 72, 153, 0.035) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 60% at 45% 15%, rgba(59, 130, 246, 0.025) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 70% at 70% 50%, rgba(168, 85, 247, 0.02) 0%, transparent 45%);
+    animation: backgroundAmbienceLayer1 80s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+    will-change: transform;
+  }
+
+  /* Second layer for depth */
+  body::after {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+      radial-gradient(ellipse 90% 40% at 60% 80%, rgba(251, 146, 60, 0.015) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 75% at 25% 60%, rgba(99, 102, 241, 0.02) 0%, transparent 50%);
+    animation: backgroundAmbienceLayer2 100s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+    will-change: transform;
+    mix-blend-mode: overlay;
+    opacity: 0.6;
+  }
+
+  /* Dark mode background ambience */
+  .dark body::before {
+    background: 
+      radial-gradient(ellipse 80% 50% at 15% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 85% 70%, rgba(34, 211, 238, 0.05) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 60% at 45% 15%, rgba(99, 102, 241, 0.04) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 70% at 70% 50%, rgba(79, 70, 229, 0.03) 0%, transparent 45%);
+  }
+
+  .dark body::after {
+    background: 
+      radial-gradient(ellipse 90% 40% at 60% 80%, rgba(34, 211, 238, 0.03) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 75% at 25% 60%, rgba(59, 130, 246, 0.025) 0%, transparent 50%);
+    mix-blend-mode: screen;
+    opacity: 0.5;
   }
 }
 
-/* 3. Custom Keyframes (for floating elements later) */
+/* 3. Custom Keyframes */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
+}
+
+@keyframes backgroundAmbienceLayer1 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  20% {
+    transform: translate(1.5%, 2%) scale(1.03) rotate(0.5deg);
+    opacity: 0.95;
+  }
+  40% {
+    transform: translate(-1%, 1.5%) scale(0.99) rotate(-0.3deg);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(0.5%, -1.5%) scale(1.01) rotate(0.2deg);
+    opacity: 0.98;
+  }
+  80% {
+    transform: translate(-0.8%, 1%) scale(1.02) rotate(-0.2deg);
+    opacity: 0.97;
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes backgroundAmbienceLayer2 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(-1.2%, 1.8%) scale(1.02) rotate(-0.4deg);
+    opacity: 0.65;
+  }
+  50% {
+    transform: translate(1.5%, -1.2%) scale(0.98) rotate(0.3deg);
+    opacity: 0.55;
+  }
+  75% {
+    transform: translate(-0.8%, -1.5%) scale(1.01) rotate(0.2deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
 }
