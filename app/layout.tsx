@@ -17,14 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      {/* Note: suppressHydrationWarning prevents a small warning about dark mode matching server/client */}
       <body className={inter.className}>
-        {/* 2. Wrap the children with the ThemeProvider */}
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+          defaultTheme="light"
+          enableSystem={false}
+          storageKey="theme"
         >
           {children}
         </ThemeProvider>

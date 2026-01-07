@@ -2,16 +2,10 @@
 
 /* 1. Define your Custom Theme here */
 @theme {
-  /* The "Neon Cyan" accent */
+
   --color-neon-cyan: #06b6d4;
-
-  /* The "Charcoal" dark background */
   --color-charcoal: #0a0a0a;
-
-  /* The "Off-White" for text/light mode */
   --color-off-white: #fafafa;
-
-  /* Extending standard animations if needed */
   --animate-float: float 6s ease-in-out infinite;
 }
 
@@ -24,8 +18,8 @@
 
 @layer base {
   body {
-    /* Updated to use your new colors: bg-charcoal, text-off-white */
-    @apply antialiased bg-slate-50 text-slate-900 dark:bg-charcoal dark:text-off-white transition-colors duration-300;
+    /* Updated: Using custom 'bg-off-white' for a cleaner light mode base */
+    @apply antialiased bg-off-white text-slate-900 dark:bg-charcoal dark:text-off-white transition-colors duration-300;
   }
 }
 
