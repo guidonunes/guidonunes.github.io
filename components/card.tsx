@@ -9,8 +9,8 @@ export function Card({ children, className, ...props }: CardProps) {
   return (
     <div
       className={cn(
-        // Base Layout
-        "relative overflow-hidden rounded-3xl p-0 ps-12",
+        // Base Layout - Responsive padding, allow overflow for image on md screens
+        "relative overflow-visible md:overflow-hidden rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12",
 
         // Light Mode "Glass" - Enhanced frosted glass effect
         "bg-white/40 backdrop-blur-2xl border border-white/30 shadow-2xl ring-1 ring-white/20",
