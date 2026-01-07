@@ -1,5 +1,8 @@
+"use client";
+
 import * as React from "react";
-import { cn } from "@/lib/utils"; // We'll create this helper in a second
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
@@ -7,7 +10,15 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function Card({ children, className, ...props }: CardProps) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 50, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 200,
+        damping: 25,
+        mass: 0.8,
+      }}
       className={cn(
         // Base Layout - Responsive padding, allow overflow for image on md screens
         "relative overflow-visible md:overflow-hidden rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-0 lg:p-0",
@@ -22,11 +33,11 @@ export function Card({ children, className, ...props }: CardProps) {
         "transition-all duration-500 ease-out",
         className
       )}
-      {...props}
+      {...(props as any)}
     >
       <div className="absolute inset-0 -z-10 opacity-5 dark:opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
       {children}
-    </div>
+    </motion.div>
   );
 }

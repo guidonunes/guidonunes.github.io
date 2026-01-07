@@ -13,7 +13,7 @@ export function Hero() {
       <div className="flex-1 flex flex-col justify-center py-8 px-8 pl-12 md:py-12 md:px-12 md:pl-16 lg:pl-20 space-y-6 text-center md:text-left order-2 md:order-1 z-10">
         <div className="space-y-3">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-slate-900 dark:text-white">
-            Guido Nunes
+            Guilherme Nunes
           </h1>
           <p className="text-xl md:text-2xl lg:text-3xl font-medium text-cyan-600 dark:text-cyan-400">
             Software Engineer
