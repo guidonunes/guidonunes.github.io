@@ -1,11 +1,17 @@
+import { MainLayout } from "@/components/main-layout"
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-center font-mono text-sm flex">
-        <h1 className="text-4xl font-bold">
-          Guido Nunes <span className="text-blue-500">.dev</span>
+    <MainLayout>
+      {/* This inner div is a temporary placeholder for your "Glass Card" */}
+      <section className="flex flex-col items-center text-center space-y-4">
+        <h1 className="text-4xl font-bold tracking-tight">
+          Guido Nunes
         </h1>
-      </div>
-    </main>
+        <p className="text-slate-500 dark:text-slate-400">
+          Software Engineer
+        </p>
+      </section>
+    </MainLayout>
   );
 }
