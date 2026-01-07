@@ -10,7 +10,7 @@ export function Card({ children, className, ...props }: CardProps) {
     <div
       className={cn(
         // Base Layout
-        "relative overflow-hidden rounded-3xl p-8 sm:p-12",
+        "relative overflow-hidden rounded-3xl p-0 ps-12",
 
         // Light Mode "Glass"
         "bg-white/80 backdrop-blur-xl border border-white/20 shadow-2xl",
