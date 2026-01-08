@@ -7,8 +7,8 @@ export default function Home() {
     <MainLayout>
       {/* 1. NEW: The Ambient Background Layer */}
       {/* This sits behind the card (-z-10) so the glass effect has something to blur. */}
-      <div className="fixed inset-0 flex items-center justify-center -z-10 pointer-events-none">
-        <div className="h-[400px] w-[400px] sm:h-[500px] sm:w-[500px] md:h-[600px] md:w-[600px] lg:h-[700px] lg:w-[700px] rounded-full bg-gradient-to-tr from-purple-400/60 via-pink-300/50 to-pink-400/60 dark:from-blue-600/40 dark:via-cyan-500/35 dark:to-cyan-600/40 blur-[100px] sm:blur-[110px] md:blur-[120px] animate-pulse" />
+      <div className="fixed inset-0 flex items-center justify-center -z-10">
+        <div className="h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-purple-200/40 to-pink-200/40 dark:from-blue-900/20 dark:to-cyan-900/20 blur-[120px]" />
       </div>
 
       <Card>
