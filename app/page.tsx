@@ -1,6 +1,7 @@
 import { MainLayout } from "@/components/main-layout";
 import { Card } from "@/components/card";
 import { Hero } from "@/components/hero";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Card>
         <Hero />
       </Card>
+      <Footer />
     </MainLayout>
   );
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ThemeToggle } from './theme-toggle';
-import { Footer } from './footer';
+
 
 
 interface MainLayoutProps {
@@ -16,7 +16,7 @@ export function MainLayout({ children}: MainLayoutProps) {
       <div className="w-full max-w-full sm:max-w-lg md:max-w-4xl lg:max-w-6xl xl:max-w-7xl px-2 sm:px-4">
         {children}
       </div>
-      <Footer />
+
     </div>
   );
 }
