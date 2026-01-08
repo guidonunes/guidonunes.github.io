@@ -14,9 +14,10 @@ export function NavTabs({ activeTab, onChange }: NavTabsProps) {
   ];
 
   return (
-    <div className="absolute z-50 flex md:flex-col gap-4
-      /* Position: Bottom on Mobile, Right on Desktop */
-      bottom-6 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:bottom-auto md:right-6 md:top-1/2 md:-translate-y-1/2"
+    <div className="relative md:absolute z-50 flex flex-row md:flex-col gap-4
+      /* Position: Between card and footer on Mobile, Right side on Desktop */
+      justify-center md:justify-start
+      md:translate-x-0 md:left-auto md:bottom-auto md:right-6 md:top-1/2 md:-translate-y-1/2"
     >
       {tabs.map((tab) => (
         <button

@@ -1,10 +1,15 @@
+"use client";
+
+import * as React from "react";
 import { MainLayout } from "@/components/main-layout";
 import { Card } from "@/components/card";
-import { Hero } from "@/components/hero";
 import { Footer } from "@/components/footer";
 import { CardDeck } from "@/components/card-deck";
+import { NavTabs } from "@/components/nav-tabs";
 
 export default function Home() {
+  const [activeTab, setActiveTab] = React.useState("home");
+
   return (
     <MainLayout>
       {/* 1. NEW: The Ambient Background Layer */}
@@ -15,8 +20,13 @@ export default function Home() {
 
       <div className="flex-1 flex flex-col justify-center w-full">
         <Card>
-          <CardDeck />
+          <CardDeck activeTab={activeTab} onChange={setActiveTab} />
         </Card>
+      </div>
+
+      {/* Navigation icons between card and footer on mobile */}
+      <div className="md:hidden w-full flex justify-center py-4">
+        <NavTabs activeTab={activeTab} onChange={setActiveTab} />
       </div>
 
       <Footer />

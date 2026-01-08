@@ -7,9 +7,12 @@ import { HomeSection } from "@/components/sections/home-section";
 import { AboutSection } from "@/components/sections/about-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
 
-export function CardDeck() {
-  // 1. State: Tracks which card is currently visible
-  const [activeTab, setActiveTab] = React.useState("home");
+interface CardDeckProps {
+  activeTab: string;
+  onChange: (tab: string) => void;
+}
+
+export function CardDeck({ activeTab, onChange }: CardDeckProps) {
 
   // 2. Helper to render the correct component
   const renderContent = () => {
@@ -29,8 +32,10 @@ export function CardDeck() {
     // Relative container to hold the Tabs and the Content
     <div className="relative w-full h-full min-h-[600px] flex flex-col md:flex-row">
 
-      {/* A. The Navigation Buttons (Floating on the right/bottom) */}
-      <NavTabs activeTab={activeTab} onChange={setActiveTab} />
+      {/* A. The Navigation Buttons (Floating on the right side) - Only visible on desktop */}
+      <div className="hidden md:block">
+        <NavTabs activeTab={activeTab} onChange={onChange} />
+      </div>
 
       {/* B. The Content Area (Animated) */}
       <div className="flex-1 relative overflow-hidden">
