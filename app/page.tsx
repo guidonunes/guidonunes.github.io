@@ -2,6 +2,7 @@ import { MainLayout } from "@/components/main-layout";
 import { Card } from "@/components/card";
 import { Hero } from "@/components/hero";
 import { Footer } from "@/components/footer";
+import { CardDeck } from "@/components/card-deck";
 
 export default function Home() {
   return (
@@ -14,10 +15,10 @@ export default function Home() {
 
       <div className="flex-1 flex flex-col justify-center w-full">
         <Card>
-          <Hero />
+          <CardDeck />
         </Card>
       </div>
-      
+
       <Footer />
     </MainLayout>
   );

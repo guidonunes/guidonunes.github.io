@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { SocialDock } from "@/components/social-dock";
 
-export function HomeSectionsh() {
+export function HomeSection() {
   return (
     // 1. CHANGED: Removed 'items-center'.
     // This allows the children to stretch to the full height of the card.
