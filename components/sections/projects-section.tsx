@@ -10,17 +10,17 @@ export function ProjectsSection() {
       desc: "Financial simulator comparing Dollar Cost Averaging vs. Lump Sum strategies using historical market data.",
       tags: ["Spring Boot", "Next.js", "Java", "PostgreSQL"],
       links: {
-        github: "https://github.com/guidonunes", // Replace with actual repo URL
+        github: "https://github.com/guidonunes/crypto_dca_simulator",
         // demo: "#", // Uncomment if you have a live link later
       },
-      image: "/project-dca.png", // Make sure this file exists in /public
+      image: "/project-dca.jpeg",
     },
     {
       title: "SatoshiAI",
       desc: "Intelligent Financial Advisor Chatbot powered by Gemini. Combines market insights with emotional intelligence.",
       tags: ["Python", "Flask", "Gemini API", "JavaScript"],
       links: {
-        github: "https://github.com/guidonunes",
+        github: "https://github.com/guidonunes/gemini_chatbot",
       },
       image: "/project-satoshi.png",
     },
@@ -29,16 +29,16 @@ export function ProjectsSection() {
       desc: "Comprehensive portfolio tracker for Crypto and B3-listed stocks. Integrates Web3 data with real-time stock metrics.",
       tags: ["Ruby on Rails", "Bootstrap", "Chart.js"],
       links: {
-        github: "https://github.com/guidonunes",
+        github: "https://github.com/guidonunes/portifolio_pilot_v2",
       },
-      image: "/project-pilot.png",
+      image: "/project-pilot.jpeg",
     },
     {
       title: "Fintech Upside",
       desc: "Full-stack personal finance management platform focusing on expense tracking and budget planning.",
       tags: ["Spring Boot", "Next.js", "TypeScript", "Tailwind"],
       links: {
-        github: "https://github.com/guidonunes",
+        github: "https://github.com/guidonunes/upside_fintech_app",
       },
       image: "/project-upside.png",
     },
