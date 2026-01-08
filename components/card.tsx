@@ -25,7 +25,7 @@ export function Card({ children, className, ...props }: CardProps) {
       }}
       className={cn(
         // Base Layout - Responsive padding, allow overflow for image on md screens
-        "relative overflow-visible md:overflow-hidden rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-0 lg:p-0",
+        "relative overflow-visible md:overflow-hidden rounded-2xl sm:rounded-3xl pt-4 px-4 pb-0 sm:pt-6 sm:px-6 sm:pb-0 md:p-0 lg:p-0",
 
         // Light Mode "Glass" - Enhanced frosted glass effect
         "bg-white/40 backdrop-blur-2xl border border-white/10 shadow-2xl ring-1 ring-white/10",

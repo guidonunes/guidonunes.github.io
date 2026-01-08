@@ -10,7 +10,7 @@ export function Hero() {
       {/* --- LEFT COLUMN (Text) --- */}
       {/* 2. ADDED: 'flex flex-col justify-center'
           This forces the text to stay vertically centered, even though the parent isn't. */}
-      <div className="flex-1 flex flex-col justify-center py-8 px-8 pl-12 md:py-12 md:px-12 md:pl-16 lg:pl-20 space-y-6 text-center md:text-left order-2 md:order-1 z-10">
+      <div className="flex-1 flex flex-col justify-center py-8 px-8 pl-12 md:py-12 md:px-12 md:pl-16 lg:pl-20 space-y-6 text-center md:text-left order-1 z-10">
         <div className="space-y-3">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-slate-900 dark:text-white">
             Guilherme Nunes
@@ -31,9 +31,8 @@ export function Hero() {
       </div>
 
       {/* --- RIGHT COLUMN (Photo) --- */}
-      {/* 3. ADDED: 'mt-auto'
-          This tells the browser: "Push this block to the very bottom of the flex container." */}
-      <div className="relative w-full max-w-[350px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[650px] xl:max-w-[700px] md:w-[55%] lg:w-[60%] aspect-square order-1 md:order-2 shrink-0 mt-auto mx-auto md:mx-0">
+      {/* 3. Photo appears at bottom on mobile, right side on desktop */}
+      <div className="relative w-full max-w-[350px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[650px] xl:max-w-[700px] md:w-[55%] lg:w-[60%] aspect-square order-2 shrink-0 md:mt-auto mx-auto md:mx-0">
 
         {/* Glow effect */}
         <div className="absolute bottom-0 right-0 w-[80%] h-[80%] bg-gradient-to-tr from-cyan-500/30 to-purple-500/30 blur-3xl opacity-40 -z-10 rounded-full" />
