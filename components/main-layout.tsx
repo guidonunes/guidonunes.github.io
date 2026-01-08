@@ -13,10 +13,9 @@ export function MainLayout({ children}: MainLayoutProps) {
       <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-50">
         <ThemeToggle />
       </div>
-      <div className="w-full max-w-full sm:max-w-lg md:max-w-4xl lg:max-w-6xl xl:max-w-7xl px-2 sm:px-4">
+      <div className="w-full max-w-full sm:max-w-lg md:max-w-4xl lg:max-w-6xl xl:max-w-7xl px-2 sm:px-4 flex-1 flex flex-col">
         {children}
       </div>
-
     </div>
   );
 }
