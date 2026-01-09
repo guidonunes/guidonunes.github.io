@@ -1,4 +1,4 @@
-# Guido Nunes | Professional Portfolio
+# Guilherme Nunes | Professional Portfolio
 
 ![Portfolio Preview](public/profile.png) 
 A high-performance personal portfolio website engineered to demonstrate advanced frontend capabilities. Built with **Next.js 14** and **Framer Motion**, featuring a "Glassmorphism" aesthetic and complex state management.
