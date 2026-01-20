@@ -26,7 +26,7 @@ export function Hero() {
         </p>
 
         <div className="pt-6 flex justify-center md:justify-start">
-           <SocialDock />
+          <SocialDock />
         </div>
       </div>
 
