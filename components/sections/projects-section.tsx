@@ -13,7 +13,7 @@ export function ProjectsSection() {
         github: "https://github.com/guidonunes/crypto_dca_simulator",
         // demo: "#", // Uncomment if you have a live link later
       },
-      image: "/project-dca.jpeg",
+      image: "/project-dca.png",
     },
     {
       title: "SatoshiAI",
