@@ -1,8 +1,10 @@
 # Name of the workflow
 name: Deploy Next.js to GitHub Pages
 
-# Trigger: Run this only when code is pushed to the 'main' branch
+# Build pull requests; deploy only pushes to master.
 on:
+  pull_request:
+    branches: ["master"]
   push:
     branches: ["master"]
 
@@ -14,7 +16,7 @@ permissions:
 
 # Prevent multiple deployments from colliding
 concurrency:
-  group: "pages"
+  group: "pages-${{ github.ref }}"
   cancel-in-progress: false
 
 jobs:
@@ -75,6 +77,9 @@ jobs:
           fi
           echo "Build output verified: $(ls -la out | head -10)"
 
+      - name: Verify exported routes and interactions
+        run: npm test
+
       - name: Upload artifact 📤
         uses: actions/upload-pages-artifact@v3
         with:
@@ -82,6 +87,7 @@ jobs:
 
   # Job 2: Deploy the built site
   deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
