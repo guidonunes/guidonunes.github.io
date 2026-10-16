@@ -48,7 +48,7 @@ export function Home({ lang }: { lang: Locale }) {
             </h1>
             <p>
               {t(
-                "I’m Guilherme. I build APIs and applications with Java, Spring Boot, Kotlin, and .NET, with experience delivering production software in a freelance team.",
+                "I’m Guilherme, a software engineer focused on turning business requirements into reliable backend systems. My work spans API design, business logic, data modeling, and deployment, primarily with Java and Spring Boot, alongside Kotlin and .NET. I’ve contributed to production software as part of a freelance team, connecting technical decisions with real product needs.",
               )}
             </p>
             <div className="hero-actions">
