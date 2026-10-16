@@ -1,0 +1,394 @@
+{
+  "p1grid": {
+    "title": "P1Grid",
+    "category": "fullstack",
+    "tags": ["Ruby on Rails", "PostgreSQL", "Hotwire", "Tailwind", "GoodJob"],
+    "repository": null,
+    "sources": [],
+    "en": {
+      "type": "PRODUCTION · FREELANCE TEAM",
+      "period": "December 2025 — September 2026",
+      "lead": "A Formula 1 prediction platform, built and delivered with a freelance team.",
+      "problem": "A race-weekend prediction game needs more than a form: participants need to save and revise their picks before a deadline, see rankings, and receive timely communications. Those rules must stay consistent across the application.",
+      "role": "As a Full Stack Developer at I.Tech, I contributed backend business logic and responsive interfaces using Rails, PostgreSQL, and Tailwind. My work included prediction deadlines, rankings, and scheduled emails, with delivery coordinated through the team’s Git and GitHub workflow.",
+      "decisions": [
+        {
+          "title": "Make the deadline part of the business rules",
+          "body": "Prediction editing depends on the race deadline. This connects the interface to the application rules, so the saved prediction and what a participant can edit follow the same workflow."
+        },
+        {
+          "title": "Keep the product inside a cohesive Rails stack",
+          "body": "Rails and PostgreSQL support the domain and persistence, while ERB, Turbo, and Stimulus provide the web interface. This keeps the prediction workflow within one application rather than requiring a separate frontend API for every interaction."
+        },
+        {
+          "title": "Schedule communications separately",
+          "body": "Active Job and GoodJob handle scheduled emails. The application can coordinate communications with the race schedule without tying that work to a participant keeping a page open."
+        }
+      ],
+      "outcomes": [
+        "The team delivered a production platform with real users.",
+        "My contribution covered backend rules and responsive interfaces.",
+        "The product includes predictions, rankings, administrative controls, and scheduled communications."
+      ],
+      "note": "Delivered with the I.Tech freelance team, from client requirements through a shared Git and GitHub workflow.",
+      "diagram": [
+        ["Participant", "Responsive web interface"],
+        ["Rails application", "Predictions · deadlines · rankings"],
+        [
+          ["PostgreSQL", "Application data"],
+          ["GoodJob", "Scheduled email jobs"],
+          ["Hotwire", "Turbo + Stimulus interactions"]
+        ]
+      ],
+      "diagramNote": "Simplified component view of the project stack; not a deployment or infrastructure diagram."
+    },
+    "pt": {
+      "type": "PRODUÇÃO · EQUIPE FREELANCE",
+      "period": "Dezembro de 2025 — setembro de 2026",
+      "lead": "Uma plataforma de palpites de Fórmula 1 desenvolvida e entregue com uma equipe freelance.",
+      "problem": "Um jogo de palpites por fim de semana de corrida vai além de um formulário: os participantes precisam salvar e revisar escolhas antes do prazo, consultar rankings e receber comunicações no momento certo. Essas regras precisam permanecer consistentes em toda a aplicação.",
+      "role": "Como Desenvolvedor Full Stack na I.Tech, contribuí com regras de negócio no backend e interfaces responsivas usando Rails, PostgreSQL e Tailwind. Minha atuação incluiu prazos para palpites, rankings e e-mails programados, com entregas coordenadas pelo fluxo de Git e GitHub da equipe.",
+      "decisions": [
+        {
+          "title": "Tratar o prazo como regra de negócio",
+          "body": "A edição dos palpites depende do prazo da corrida. Isso conecta a interface às regras da aplicação, mantendo o palpite salvo e as ações disponíveis ao participante dentro do mesmo fluxo."
+        },
+        {
+          "title": "Concentrar o produto em uma stack Rails coesa",
+          "body": "Rails e PostgreSQL sustentam o domínio e a persistência, enquanto ERB, Turbo e Stimulus compõem a interface web. O fluxo de palpites permanece em uma aplicação, sem exigir uma API de frontend separada para cada interação."
+        },
+        {
+          "title": "Separar as comunicações programadas",
+          "body": "Active Job e GoodJob executam os e-mails programados. A aplicação coordena as comunicações com o calendário das corridas sem depender de o participante manter uma página aberta."
+        }
+      ],
+      "outcomes": [
+        "A equipe entregou uma plataforma em produção com usuários reais.",
+        "Minha contribuição incluiu regras de backend e interfaces responsivas.",
+        "O produto reúne palpites, rankings, controles administrativos e comunicações programadas."
+      ],
+      "note": "Entregue com a equipe freelance da I.Tech, dos requisitos do cliente ao fluxo compartilhado de Git e GitHub.",
+      "diagram": [
+        ["Participante", "Interface web responsiva"],
+        ["Aplicação Rails", "Palpites · prazos · rankings"],
+        [
+          ["PostgreSQL", "Dados da aplicação"],
+          ["GoodJob", "E-mails programados"],
+          ["Hotwire", "Interações Turbo + Stimulus"]
+        ]
+      ],
+      "diagramNote": "Visão simplificada dos componentes da stack; não representa a infraestrutura de implantação."
+    }
+  },
+  "aguia": {
+    "title": "AguiaX",
+    "category": "backend",
+    "tags": [
+      "Java 21",
+      "Spring Boot",
+      "MySQL",
+      "MongoDB",
+      "Kotlin",
+      "Jetpack Compose"
+    ],
+    "repository": "https://github.com/guidonunes/aguiax",
+    "sources": [
+      {
+        "en": "Architecture, rules, and tests",
+        "pt": "Arquitetura, regras e testes",
+        "url": "https://github.com/guidonunes/aguiax/blob/master/README.md"
+      },
+      {
+        "en": "Postman collection guide",
+        "pt": "Guia da coleção Postman",
+        "url": "https://github.com/guidonunes/aguiax/blob/master/postman/README.md"
+      }
+    ],
+    "en": {
+      "type": "ACADEMIC · FIAP / GRUPO ÁGUIA BRANCA",
+      "period": "FIAP Challenge · 2026",
+      "lead": "Turning an idea into a project through an authorized, traceable backend workflow.",
+      "problem": "An innovation platform needs to distinguish who can contribute, assess, approve, and manage an idea. The difficult part is keeping permissions, lifecycle transitions, and the conversion into a project consistent across a mobile client and multiple data stores.",
+      "role": "My work on this academic challenge covers the Java/Spring Boot backend, business rules, data relationships, Flyway migrations, and REST integration with the Kotlin/Jetpack Compose Android application.",
+      "decisions": [
+        {
+          "title": "Keep authorization and workflow rules on the server",
+          "body": "OPERACIONAL, GESTOR, and LIDER have independent permissions. Android adapts the interface, but the API validates authorization and permitted state transitions. Hiding a mobile control is not the security boundary."
+        },
+        {
+          "title": "Convert an approved idea atomically",
+          "body": "Project creation and the idea’s conversion are performed in one MySQL transaction, with at most one project per idea. This keeps a partial conversion from becoming a valid domain state."
+        },
+        {
+          "title": "Assign clear responsibilities to each data store",
+          "body": "MySQL is the transactional source of truth. MongoDB stores audit events and AI history. Gemini provides advisory, structured evaluations; it does not approve or reject ideas or change their status."
+        }
+      ],
+      "outcomes": [
+        "A native Android client is integrated with the Spring Boot API.",
+        "The repository documents backend and Android tests, including mocked AI integration.",
+        "Docker Compose, a Postman collection, and setup instructions provide a reproducible review path."
+      ],
+      "note": "Academic FIAP Challenge in the Grupo Águia Branca context. Architecture and test evidence are available in the linked repository.",
+      "diagram": [
+        ["Android · Kotlin + Compose", "REST / JSON + Bearer JWT"],
+        ["Spring Boot API · Java 21", "Authorization · workflow · priority"],
+        [
+          ["MySQL + Flyway", "Transactional source of truth"],
+          ["MongoDB", "Audit events + AI history"],
+          ["Gemini", "Advisory structured evaluation"]
+        ]
+      ],
+      "diagramNote": "Simplified architecture derived from the repository’s documented system boundaries."
+    },
+    "pt": {
+      "type": "ACADÊMICO · FIAP / GRUPO ÁGUIA BRANCA",
+      "period": "Challenge FIAP · 2026",
+      "lead": "Da ideia ao projeto por meio de um fluxo de backend autorizado e rastreável.",
+      "problem": "Uma plataforma de inovação precisa distinguir quem pode contribuir, avaliar, aprovar e gerenciar uma ideia. O desafio é manter permissões, transições e conversão em projeto consistentes entre o aplicativo mobile e diferentes bancos de dados.",
+      "role": "Minha atuação neste challenge acadêmico abrange o backend Java/Spring Boot, regras de negócio, relacionamentos de dados, migrações Flyway e integração REST com o aplicativo Android em Kotlin e Jetpack Compose.",
+      "decisions": [
+        {
+          "title": "Manter autorização e regras de fluxo no servidor",
+          "body": "OPERACIONAL, GESTOR e LIDER têm permissões independentes. O Android adapta a interface, mas a API valida a autorização e as transições permitidas. Ocultar um controle no aplicativo não constitui a barreira de segurança."
+        },
+        {
+          "title": "Converter uma ideia aprovada de forma atômica",
+          "body": "A criação do projeto e a conversão da ideia acontecem em uma transação MySQL, com no máximo um projeto por ideia. Isso impede que uma conversão parcial se torne um estado válido do domínio."
+        },
+        {
+          "title": "Definir responsabilidades claras para cada banco",
+          "body": "MySQL é a fonte de verdade transacional. MongoDB armazena auditorias e histórico de IA. O Gemini produz avaliações consultivas e estruturadas; não aprova, rejeita nem altera o status de ideias."
+        }
+      ],
+      "outcomes": [
+        "Aplicativo Android nativo integrado à API Spring Boot.",
+        "O repositório documenta testes de backend e Android, incluindo simulação da integração de IA.",
+        "Docker Compose, coleção Postman e instruções de execução permitem reproduzir a aplicação para avaliação."
+      ],
+      "note": "Challenge acadêmico da FIAP no contexto do Grupo Águia Branca. A arquitetura e as evidências de testes estão disponíveis no repositório vinculado.",
+      "diagram": [
+        ["Android · Kotlin + Compose", "REST / JSON + Bearer JWT"],
+        ["API Spring Boot · Java 21", "Autorização · fluxo · prioridade"],
+        [
+          ["MySQL + Flyway", "Fonte de verdade transacional"],
+          ["MongoDB", "Auditoria + histórico de IA"],
+          ["Gemini", "Avaliação consultiva estruturada"]
+        ]
+      ],
+      "diagramNote": "Arquitetura simplificada a partir dos limites documentados no repositório."
+    }
+  },
+  "carbon": {
+    "title": "CarbonHunter",
+    "category": "backend",
+    "tags": [
+      "C#",
+      "ASP.NET Core 8",
+      "MongoDB",
+      "Testcontainers",
+      "Docker",
+      "GitHub Actions",
+      "AWS EC2"
+    ],
+    "repository": "https://github.com/guidonunes/Web.Fiap.Carbono",
+    "sources": [
+      {
+        "en": "API, architecture, and recorded evidence",
+        "pt": "API, arquitetura e evidências registradas",
+        "url": "https://github.com/guidonunes/Web.Fiap.Carbono/blob/master/README.md"
+      },
+      {
+        "en": "MongoDB migration decisions",
+        "pt": "Decisões da migração MongoDB",
+        "url": "https://github.com/guidonunes/Web.Fiap.Carbono/blob/master/docs/mongodb-migration.md"
+      },
+      {
+        "en": "Successful pipeline run · October 12, 2026",
+        "pt": "Execução aprovada do pipeline · 12/10/2026",
+        "url": "https://github.com/guidonunes/Web.Fiap.Carbono/actions/runs/38304927773/attempts/1"
+      }
+    ],
+    "en": {
+      "type": "ACADEMIC · BACKEND & DELIVERY",
+      "period": "FIAP · 2026",
+      "lead": "A carbon-emissions API with a documented MongoDB migration and a staged delivery workflow.",
+      "problem": "Supply-chain emissions calculations need consistent units, valid reference data, and a record of the factor used. The project also needed a repeatable delivery path that would stop a failing release before production.",
+      "role": "I developed the emissions-management API and its business rules, worked on the Oracle-to-MongoDB migration, and implemented containerization and CI/CD as part of the FIAP academic project.",
+      "decisions": [
+        {
+          "title": "Preserve the context of each calculation",
+          "body": "The active MongoDB model uses five ESG collections. Emission documents embed activity data and the applied factor as snapshots, retaining the calculation context rather than relying only on a reference to a factor that may later change."
+        },
+        {
+          "title": "Test against the real persistence technology",
+          "body": "Integration tests use the application and a disposable MongoDB container. They cover reference validation, decimal calculations, authorization, snapshots, and aggregates, providing evidence beyond isolated mocks."
+        },
+        {
+          "title": "Promote one immutable image",
+          "body": "GitHub Actions builds and tests, publishes to Docker Hub, and promotes the same image digest through staging and production on AWS EC2. A failing staging verification blocks production; the environments use separate data resources."
+        }
+      ],
+      "outcomes": [
+        "MongoDB is the active persistence layer; historical Oracle code is isolated from the API.",
+        "The recorded CI recovery on October 12, 2026 reports 107 passing tests.",
+        "The repository preserves successful deployment evidence and a controlled staging-failure/recovery exercise."
+      ],
+      "note": "Academic delivery exercise. The linked evidence records the staging and production pipeline on October 12, 2026.",
+      "diagram": [
+        ["HTTP client", "REST API + JWT"],
+        ["ASP.NET Core 8", "Controllers → business rules → repositories"],
+        [
+          ["MongoDB", "Five ESG collections"],
+          ["Testcontainers", "Disposable integration database"],
+          ["GitHub Actions → EC2", "Image digest · staging → production"]
+        ]
+      ],
+      "diagramNote": "Simplified application and delivery view, based on the repository documentation.",
+      "evidence": {
+        "image": "/assets/carbon-pipeline.png",
+        "alt": "GitHub Actions screenshot showing successful build, image publication, staging deployment and production deployment.",
+        "caption": "Actual repository evidence: the successful master pipeline recorded on October 12, 2026. Open the linked workflow for context."
+      }
+    },
+    "pt": {
+      "type": "ACADÊMICO · BACKEND E ENTREGA",
+      "period": "FIAP · 2026",
+      "lead": "API de emissões de carbono com migração MongoDB documentada e entrega por ambientes.",
+      "problem": "O cálculo de emissões na cadeia de suprimentos exige unidades consistentes, referências válidas e registro do fator utilizado. O projeto também precisava de uma entrega reproduzível que interrompesse releases com falha antes da produção.",
+      "role": "Desenvolvi a API de gestão de emissões e suas regras de negócio, trabalhei na migração Oracle–MongoDB e implementei a containerização e o CI/CD como parte do projeto acadêmico da FIAP.",
+      "decisions": [
+        {
+          "title": "Preservar o contexto de cada cálculo",
+          "body": "O modelo MongoDB ativo usa cinco coleções ESG. Os documentos de emissão incorporam dados da atividade e o fator aplicado como snapshots, preservando o contexto do cálculo sem depender apenas de uma referência a um fator que pode mudar."
+        },
+        {
+          "title": "Testar com a tecnologia real de persistência",
+          "body": "Os testes de integração executam a aplicação com um MongoDB descartável em container. Cobrem referências, cálculos decimais, autorização, snapshots e agregações, oferecendo evidências além de mocks isolados."
+        },
+        {
+          "title": "Promover uma imagem imutável",
+          "body": "GitHub Actions compila e testa, publica no Docker Hub e promove o mesmo digest por staging e produção na AWS EC2. Uma falha na verificação de staging bloqueia produção; os ambientes usam recursos de dados separados."
+        }
+      ],
+      "outcomes": [
+        "MongoDB é a persistência ativa; o código Oracle histórico fica separado da API.",
+        "A recuperação de CI registrada em 12/10/2026 apresenta 107 testes aprovados.",
+        "O repositório preserva evidências de deploy e de um exercício controlado de falha e recuperação em staging."
+      ],
+      "note": "Exercício acadêmico de entrega. As evidências vinculadas registram o pipeline de staging e produção em 12/10/2026.",
+      "diagram": [
+        ["Cliente HTTP", "API REST + JWT"],
+        ["ASP.NET Core 8", "Controllers → regras → repositórios"],
+        [
+          ["MongoDB", "Cinco coleções ESG"],
+          ["Testcontainers", "Banco descartável de integração"],
+          ["GitHub Actions → EC2", "Digest · staging → produção"]
+        ]
+      ],
+      "diagramNote": "Visão simplificada da aplicação e da entrega, baseada na documentação do repositório.",
+      "evidence": {
+        "image": "/assets/carbon-pipeline.png",
+        "alt": "Captura do GitHub Actions com build, publicação da imagem e deploys de staging e produção aprovados.",
+        "caption": "Evidência real do repositório: pipeline da master aprovado em 12/10/2026. Consulte a execução vinculada para ver o contexto."
+      }
+    }
+  },
+  "dca": {
+    "title": "Crypto DCA Simulator",
+    "category": "fullstack",
+    "tags": [
+      "Java 21",
+      "Spring Boot 3",
+      "Next.js",
+      "TypeScript",
+      "MySQL",
+      "Chart.js"
+    ],
+    "repository": "https://github.com/guidonunes/crypto_dca_simulator",
+    "sources": [
+      {
+        "en": "Architecture, features, and local setup",
+        "pt": "Arquitetura, funcionalidades e execução local",
+        "url": "https://github.com/guidonunes/crypto_dca_simulator/blob/master/README.md"
+      }
+    ],
+    "en": {
+      "type": "PERSONAL · FULL-STACK",
+      "period": "Portfolio project",
+      "lead": "Comparing recurring and lump-sum investments through an explicit simulation model.",
+      "problem": "DCA and lump-sum strategies invest at different times. Comparing them requires consistent inputs and monetary calculations, then a clear presentation of invested capital and portfolio value over time.",
+      "role": "I built the Java/Spring Boot simulation backend and the Next.js/TypeScript interface, connecting strategy calculations, persistence, and chart-based results.",
+      "decisions": [
+        {
+          "title": "Represent strategies as interchangeable algorithms",
+          "body": "Strategy and Factory patterns separate DCA and lump-sum calculations from orchestration. The service can select an algorithm while the controller continues to expose the same simulation contract."
+        },
+        {
+          "title": "Use decimal arithmetic for financial values",
+          "body": "BigDecimal keeps monetary calculations out of binary floating-point arithmetic. This makes numeric handling explicit; rounding and the historical-data assumptions still belong to the simulation model."
+        },
+        {
+          "title": "Keep API contracts separate from persistence",
+          "body": "Request and response DTOs define the interface, while repositories handle MySQL persistence. Next.js and Chart.js present the results without exposing database entities as the frontend contract."
+        }
+      ],
+      "outcomes": [
+        "A full-stack workflow compares DCA and lump-sum strategies using historical data.",
+        "Interactive charts distinguish invested capital from portfolio value.",
+        "The repository documents the layers, dependencies, and local startup process."
+      ],
+      "note": "An educational simulator using historical scenarios. Results depend on the selected period and simulation inputs.",
+      "diagram": [
+        ["Next.js + Chart.js", "Inputs and visual comparison"],
+        ["Spring Boot simulation service", "DTO contract · strategy selection"],
+        [
+          ["DCA strategy", "Recurring investment logic"],
+          ["Lump-sum strategy", "Single investment logic"],
+          ["MySQL", "Simulation persistence"]
+        ]
+      ],
+      "diagramNote": "Simplified component view derived from the repository’s layered architecture."
+    },
+    "pt": {
+      "type": "PESSOAL · FULL-STACK",
+      "period": "Projeto de portfólio",
+      "lead": "Comparação entre aportes recorrentes e investimento único com um modelo explícito de simulação.",
+      "problem": "As estratégias DCA e aporte único investem em momentos diferentes. A comparação exige entradas e cálculos monetários consistentes, além de uma apresentação clara do capital investido e do valor da carteira ao longo do tempo.",
+      "role": "Desenvolvi o backend de simulação em Java/Spring Boot e a interface Next.js/TypeScript, conectando cálculos das estratégias, persistência e resultados em gráficos.",
+      "decisions": [
+        {
+          "title": "Representar estratégias como algoritmos intercambiáveis",
+          "body": "Os padrões Strategy e Factory separam os cálculos de DCA e aporte único da orquestração. O serviço seleciona o algoritmo enquanto o controller mantém o mesmo contrato de simulação."
+        },
+        {
+          "title": "Usar aritmética decimal para valores financeiros",
+          "body": "BigDecimal evita o uso de ponto flutuante binário nos cálculos monetários. O tratamento numérico fica explícito; arredondamento e premissas dos dados históricos continuam fazendo parte do modelo."
+        },
+        {
+          "title": "Separar os contratos da API da persistência",
+          "body": "DTOs de entrada e saída definem a interface, enquanto repositórios cuidam da persistência MySQL. Next.js e Chart.js apresentam resultados sem expor entidades do banco como contrato do frontend."
+        }
+      ],
+      "outcomes": [
+        "Fluxo full-stack que compara DCA e aporte único com dados históricos.",
+        "Gráficos interativos distinguem capital investido e valor da carteira.",
+        "O repositório documenta camadas, dependências e execução local."
+      ],
+      "note": "Simulador educacional com cenários históricos. Os resultados dependem do período selecionado e das entradas da simulação.",
+      "diagram": [
+        ["Next.js + Chart.js", "Entradas e comparação visual"],
+        [
+          "Serviço de simulação Spring Boot",
+          "Contrato DTO · seleção de estratégia"
+        ],
+        [
+          ["Estratégia DCA", "Lógica de aportes recorrentes"],
+          ["Estratégia de aporte único", "Lógica de investimento único"],
+          ["MySQL", "Persistência de simulações"]
+        ]
+      ],
+      "diagramNote": "Visão simplificada dos componentes a partir da arquitetura em camadas do repositório."
+    }
+  }
+}
